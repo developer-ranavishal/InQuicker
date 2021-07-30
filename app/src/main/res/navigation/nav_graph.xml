@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breakingNewsScreen">
+
+    <fragment
+        android:id="@+id/breakingNewsScreen"
+        android:name="com.example.inquicker.screen.BreakingNewsScreen"
+        android:label="Breaking News"
+        tools:layout="@layout/fragment_breaking_news_screen" >
+        <action
+            android:id="@+id/action_breakingNewsScreen_to_articleScreen"
+            app:destination="@id/articleScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleScreen"
+        android:name="com.example.inquicker.screen.NewsArticleScreen"
+        android:label="News Article"
+        tools:layout="@layout/fragment_news_article_screen" >
+        <argument
+            android:name="article"
+            app:argType="com.example.inquicker.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsScreen"
+        android:name="com.example.inquicker.screen.SavedNewsScreen"
+        android:label="Saved News"
+        tools:layout="@layout/fragment_saved_news_screen">
+        <action
+            android:id="@+id/action_savedNewsScreen_to_articleScreen"
+            app:destination="@id/articleScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsScreen"
+        android:name="com.example.inquicker.screen.SearchNewsScreen"
+        android:label="Search News"
+        tools:layout="@layout/fragment_search_news_screen" >
+        <action
+            android:id="@+id/action_searchNewsScreen_to_articleScreen"
+            app:destination="@id/articleScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>
